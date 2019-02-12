@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,10 +23,13 @@ background-attachment: fixed;
 #container{  
 top: 50%;
 left: 50%;
-margin: 0 auto;
+margin: auto;
 height: 500px;  
 width: 800px;
-border: url("border_img.gif");
+border: 10px solid grey;
+border-radius: 10px;
+margin-top: 10px;
+background-color: beige;
 }
 
 .icon {
@@ -42,10 +46,11 @@ border: 1px #F00 solid;
 border-color: black;
 width: 375px;
 height: 380px;
-margin-left:230px;
-margin-top: 38px;
+margin: auto;
+margin-top: 50px;
 box-shadow: 25px;
 background: white;
+
 }
 
 form {
@@ -69,7 +74,6 @@ input {
 input[type=email],
 input[type=password],#select_box{
     padding-left: 10px;
-
     margin: 12px 0 18px 0;
     display: inline-block;
     width: 290px;
@@ -93,8 +97,8 @@ button[type=submit]:hover,input[type=button]:hover,input[type=submit]:hover
 input[type=text]:hover,input[type=number]:hover,input[type=email]:hover,
 input[type=password]:hover,#select_box:hover
 {
-	background: #acd6ef;
-	color: #262626;
+    background: #acd6ef;
+    color: #262626;
 }
 input[type=submit],input[type=button] {
     margin-left: 8px;
@@ -111,8 +115,7 @@ input[type=submit],input[type=button] {
     cursor: pointer;
 }
 .logo_img{
-    margin-left: 150px;
-    margin-right: auto;
+    margin-left: 35%;
     width: 50%;
 }
 
@@ -120,20 +123,21 @@ input[type=submit],input[type=button] {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: orange;
 	height: 50px;
-
+        padding: 15px;
+        background-color: khaki;
+        box-shadow: 0px 0px 10px;
 }
 </style>
 
 </head>
 <body > 
     <div id="heading_tag">
-<div class="heading"><h1 align="center" ><i><font face=""  size="300" color="white" style="comic sans MS">BUS MANAGEMENT</font></i></h1></div>
+<div class="heading"><h1 align="center" ><i><font face="Comic Sans MS"  size="500"  color: #7c795d;>BUS MANAGEMENT</font></i></h1></div>
     </div>
 <div id="container">
     <form name="login_form" action="login" onsubmit="return myValidation()">
-        <fieldset id="field_set" align="left" >
+        <fieldset id="field_set" >
             <img src="login_logo.png" style="height:100px;width:100px;" class="logo_img">
         <table>
             <tr>
@@ -166,6 +170,13 @@ input[type=submit],input[type=button] {
         </fieldset>
     </form>
 </div>
+<footer>
+	<center>
+		<div style = "padding: 20px;color: crimson;background-color: white;width: 30%;border-radius: 20px;">
+			All rights reserved © 2019
+		</div>
+	</center>
+</footer>
 
 <script>
 	
@@ -175,16 +186,11 @@ input[type=submit],input[type=button] {
 		var ele2 = document.forms["login_form"]["password"].value;
 		var flag = true;
 
-		if(ele1 == "")
-		{
-			alert("enter email");
-			flag = false;
-		}
-		if( ele2 == "")
-		{
-			alert("password should not be empty");
-			flag = false;
-		}
+                if(ele1 == "" || ele2 == "")
+                {
+                    alert("email or password should not be empty");
+                    flag = false;
+                }
 		return flag;
 	}
 
